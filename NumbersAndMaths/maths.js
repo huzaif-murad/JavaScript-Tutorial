@@ -1,0 +1,1 @@
+console.log(Math.floor(Math.random() * (100 - 10+1) + 10)); // Random number between 10 and 100
