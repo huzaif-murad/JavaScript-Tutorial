@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+#container {
+  background-color: #0d0042;
+  width: fit-content;
+  padding: 10px 10px;
+  margin: auto;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#display {
+  width: 90%;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  align-items: last baseline;
+  justify-content: end;
+  border-radius: 21px;
+  padding: 5px 10px;
+}
