@@ -3,7 +3,8 @@
   padding: 0px;
   margin: 0px;
 }
-html,body{
+html,
+body {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -25,8 +26,8 @@ html,body{
   height: 100px;
   background-color: white;
   display: flex;
-  align-items: last baseline;
-  justify-content: end;
+  align-items: center;
+  justify-content: flex-end;
   border-radius: 10px;
   padding: 5px 10px;
   font-size: 1.5rem;
@@ -41,14 +42,15 @@ html,body{
   width: 100%;
 }
 
-.btn{
+.btn {
   border-radius: 5px;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: rgb(191, 192, 192);
 }
-#equal{
-  grid-column: 3 /span 2;
+#equal {
+  grid-column: 3 / span 2;
 }
