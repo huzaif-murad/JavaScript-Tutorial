@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing and Deleting element</title>
+</head>
+
+<body style="background-color: #212122; color: white;">
+    <ul class="myList">
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+<script>
+    function addEelement(newElement) {
+        const myList = document.querySelector('.myList');
+        const li = document.createElement('li');
+        const liText = document.createTextNode(`${newElement}`);
+        li.appendChild(liText);
+
+        myList.appendChild(li);
+
+    }
+
+    function EditElement(newElement) {
+        const myList = document.querySelector('.myList');
+        const myLi = myList.querySelector("li:nth-child(1)");
+
+        myLi.innerHTML = `${newElement}`
+        // const newLi = document.createElement('li');
+        // newLi.appendChild(document.createTextNode("Java"))
+        // myLi.replaceWith(newLi)
+        // console.log(myLi);
+    }
+
+    EditElement("Java");
+
+    addEelement("GoLang");
+    addEelement("C++");
+    addEelement("TypeScript");
+
+</script>
+
+</html>
