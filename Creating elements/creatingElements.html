@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating elements</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const body = document.body;
+    body.style.backgroundColor = "black";
+    const helloText = document.createElement('div');
+    helloText.className = "hello";
+    helloText.id = "helloText";
+    helloText.style.backgroundColor = "green";
+
+    const text = document.createTextNode("Hello, I am added through js.");
+    helloText.appendChild(text);
+    helloText.innerText = "This second method to add text to an element.";
+
+    document.body.appendChild(helloText)
+</script>
+
+</html>
