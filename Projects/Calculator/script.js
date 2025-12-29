@@ -6,6 +6,9 @@ console.log(display);
 const buttons = document.querySelector('#buttons');
 
 let currentVal = "0";
+let previousVal = null;
+let operator = null;
+let shouldReset = false;
 
 buttons.addEventListener("click", function (e) {
 
@@ -31,16 +34,58 @@ buttons.addEventListener("click", function (e) {
         display.innerText = currentVal;
         return;
     }
-    if (type === "number") {
-        if (currentVal === "0") {
-            display.innerText = e.target.dataset.value;
-            currentVal = display.innerText;
-        } else {
-            display.innerText = display.innerText + e.target.dataset.value;
-            currentVal = display.innerText;
+
+    //Handling operators
+
+    if (type === "operator") {
+
+        // replace operator if user presses operators repeatedly
+        if (operator !== null && shouldReset) {
+            operator = value;
+            return;
         }
+
+        if (operator === null) {
+            previousVal = currentVal;
+        } else {
+            previousVal = String(calculate(previousVal, currentVal, operator));
+            currentVal = previousVal;
+            display.innerText = previousVal;
+        }
+
+        operator = value;
+        shouldReset = true;
+        return;
     }
 
-    console.log(e.target.dataset.type, e.target.dataset.value)
+
+    //Number handling
+    if (type === "number") {
+        if (shouldReset) {
+            currentVal = value;
+            shouldReset = false;
+        } else if (currentVal === "0") {
+            currentVal = value;
+        } else {
+            currentVal += value;
+        }
+
+        display.innerText = currentVal;
+        return;
+    }
+
 
 })
+
+
+function calculate(previousVal, currentVal, operator) {
+    let a = Number(previousVal);
+    let b = Number(currentVal);
+
+    switch (operator) {
+        case "+": return a + b;
+        case "-": return a - b;
+        case "*": return a * b;
+        case "/": return a / b;
+    }
+}
