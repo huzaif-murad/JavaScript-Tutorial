@@ -10,7 +10,7 @@ let operator = null;
 let shouldReset = false;
 
 buttons.addEventListener("click", function (e) {
-
+console.log(shouldReset)
     const type = e.target.dataset.type;
     const value = e.target.dataset.value;
     if (!e.target.classList.contains("btn")) return;
