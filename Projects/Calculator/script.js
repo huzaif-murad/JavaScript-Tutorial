@@ -1,7 +1,6 @@
 
 
 const display = document.querySelector('#display');
-console.log(display);
 
 const buttons = document.querySelector('#buttons');
 
@@ -50,7 +49,7 @@ buttons.addEventListener("click", function (e) {
         } else {
             previousVal = String(calculate(previousVal, currentVal, operator));
             currentVal = previousVal;
-            display.innerText = previousVal;
+            display.innerText = currentVal;
         }
 
         operator = value;
@@ -58,6 +57,23 @@ buttons.addEventListener("click", function (e) {
         return;
     }
 
+    // Equals handling
+    if (type === "special" && value === "equal") {
+
+        // Nothing to calculate
+        if (operator === null || previousVal === null) return;
+
+        const result = calculate(previousVal, currentVal, operator);
+
+        currentVal = String(result);
+        display.innerText = currentVal;
+
+        previousVal = null;
+        operator = null;
+        shouldReset = true;
+
+        return;
+    }
 
     //Number handling
     if (type === "number") {
@@ -86,6 +102,6 @@ function calculate(previousVal, currentVal, operator) {
         case "+": return a + b;
         case "-": return a - b;
         case "*": return a * b;
-        case "/": return a / b;
+        case "/": return b === 0 ? 0 : a / b;
     }
 }
