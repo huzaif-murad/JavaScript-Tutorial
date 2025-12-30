@@ -1,6 +1,6 @@
 # Project link
 
-1.Color Changer
+## Color Changer
 
 [click here](https://stackblitz.com/edit/dom-project-chaiaurcode-wcgqczv5?file=index.html)
 
@@ -26,7 +26,7 @@ buttons.forEach(function (button) {
 });
 ```
 
-1.BMI calculator
+## BMI calculator
 
 [click here](https://stackblitz.com/edit/dom-project-chaiaurcode-kvh7cc6w?file=2-BMICalculator%2Fchaiaurcode.js)
 
@@ -54,5 +54,19 @@ form.addEventListener('submit', function (e) {
     }
   }
 });
+
+```
+
+## Digital Clock
+
+[click here](https://stackblitz.com/edit/dom-project-chaiaurcode-kvh7cc6w?file=3-DigitalClock%2Fchaiaurcode.js,3-DigitalClock%2Findex.html)
+
+```JavaScript
+const clock = document.querySelector('#clock');
+
+setInterval(function () {
+  let date = new Date();
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
 
 ```
