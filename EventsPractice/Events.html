@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        .images ul li img {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="images">
+        <ul id="imageList">
+            <li><img id="minecraft" src="./images/img1.jpg" alt=""></li>
+            <li><img id="bird" src="./images/img2.jpg" alt=""></li>
+            <li><img id="moon" src="./images/img3.jpg" alt=""></li>
+            <li><img id="earth" src="./images/img4.jpg" alt=""></li>
+            <li><a href="https://www.google.com/">Google</a></li>
+        </ul>
+    </div>
+
+    <script>
+        const images = document.querySelector(".images");
+
+        images.addEventListener('click', function (e) {
+            if (e.target.tagName === 'IMG') {
+                e.target.parentNode.remove()
+            }
+
+
+        })
+    </script>
+</body>
+
+</html>
