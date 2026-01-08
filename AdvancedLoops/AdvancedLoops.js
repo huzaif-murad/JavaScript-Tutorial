@@ -23,17 +23,26 @@ let arr = [3, 4, 5, 6, 7, 8]
 //     console.log(obj1[key])
 // }
 
-let arr2 = [
-    {
-        name: "Huzaif",
-        rollNum: 24
-    },
-    {
-        name: "Tassho",
-        rollNum: 73
-    }
-]
+// let arr2 = [
+//     {
+//         name: "Rohit",
+//         rollNum: 24
+//     },
+//     {
+//         name: "Ammar",
+//         rollNum: 73
+//     }
+// ]
 
-for (const element of arr2) {
-    console.log(element.name)
-}
+// for (const element of arr2) {
+//     console.log(element.name)
+// }
+
+
+let number = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// let newNumbers = number.map((num) => num + 10)
+// console.log(newNumbers);
+
+let newNumbers = number.reduce((acc, curr) => acc * curr, 1)
+console.log(newNumbers);
