@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random color generator</title>
+    <style>
+        body {
+            background-color: rgb(26, 25, 25);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: auto;
+
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        button {
+            font-size: 16px;
+            background-color: rgb(255, 255, 255);
+            width: 50%;
+            text-transform: uppercase;
+            letter-spacing: 0.1px;
+            border-radius: 8px;
+            padding: 8px 10px;
+            margin: 3px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Start should change the value every second</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+
+    <script>
+        const body = document.body;
+        const start = document.querySelector('#start');
+        const stop = document.querySelector('#stop');
+        let changeColor;
+
+        //
+        const startChangingColor = function () {
+            changeColor = setInterval(() => {
+                changeColorFnc();
+            }, 500);
+        }
+
+        start.addEventListener('click', startChangingColor)
+
+
+
+        function changeColorFnc() {
+            let a = Math.floor(Math.random() * 255 + 1);
+            let b = Math.floor(Math.random() * 255 + 1);
+            let c = Math.floor(Math.random() * 255 + 1);
+            body.style.backgroundColor = `rgba(${a},${b},${c})`
+        }
+
+         const stopChangingColor = function () {
+                clearInterval(changeColor);
+            };
+        stop.addEventListener('click', stopChangingColor)
+       
+
+
+    </script>
+</body>
+
+</html>
