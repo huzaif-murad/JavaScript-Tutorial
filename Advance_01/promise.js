@@ -10,19 +10,22 @@ const promiseOne = new Promise(function (resolve, reject) {
     }
 })
 
-// promiseOne.then(function (msg) {
-//     console.log(msg);
+promiseOne.then(function (msg) {
+    console.log(msg);
 
-// }).catch(function (errorMsg) {
-//     console.log((errorMsg));
+}).catch(function (errorMsg) {
+    console.log((errorMsg));
 
-// })
+}).finally(function(){
+    console.log("this will run no matter what.");
 
-async function promiseResolved(params) {
+})
 
-    const response = await promiseOne;
-    console.log(response);
+// async function promiseResolved(params) {
 
-}
+//     const response = await promiseOne;
+//     console.log(response);
 
-promiseResolved()
+// }
+
+// promiseResolved()
