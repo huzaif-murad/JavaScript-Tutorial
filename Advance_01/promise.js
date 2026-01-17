@@ -1,25 +1,25 @@
 
-const promiseOne = new Promise(function (resolve, reject) {
-    let error = true;
+// const promiseOne = new Promise(function (resolve, reject) {
+//     let error = true;
 
-    if (error) {
-        reject("Connection error....");
-    } else {
+//     if (error) {
+//         reject("Connection error....");
+//     } else {
 
-        resolve("Connection established....");
-    }
-})
+//         resolve("Connection established....");
+//     }
+// })
 
-promiseOne.then(function (msg) {
-    console.log(msg);
+// promiseOne.then(function (msg) {
+//     console.log(msg);
 
-}).catch(function (errorMsg) {
-    console.log((errorMsg));
+// }).catch(function (errorMsg) {
+//     console.log((errorMsg));
 
-}).finally(function(){
-    console.log("this will run no matter what.");
+// }).finally(function () {
+//     console.log("this will run no matter what.");
 
-})
+// })
 
 // async function promiseResolved(params) {
 
@@ -29,3 +29,20 @@ promiseOne.then(function (msg) {
 // }
 
 // promiseResolved()
+
+
+fetch('https://jsonplaceholder.typicode.com')
+    .then((response) => {
+        console.log(typeof response);
+
+
+        return response;
+    })
+    .then((data) => {
+        console.log(data);
+
+    })
+    .catch((error) => {
+        console.log(error);
+
+    });
