@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  font-family: sans-serif;
+  background-color: #fff4ec;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.screen {
+  padding: 2rem;
+  background-color: #102e4a;
+  display: none;
+  text-align: center;
+  border-radius: 0.8rem;
+}
+
+.active {
+  display: block;
+}
+
+/* Start Screen */
+
+#start-screen h1 {
+  color: #fff4ec;
+  font-size: 2.5rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+  height: 10vh;
+}
+
+#start-screen p {
+  color: #fff4ec;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.btn {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  background-color: #9ce37d;
+  color: #102e4a;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  box-shadow: #a6db8f 2px 2px 2px;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #66ec2d;
+}
+
+#quiz-screen h3 {
+  color: #fff4ec;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Ubuntu", sans-serif;
+}
