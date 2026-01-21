@@ -80,6 +80,7 @@ body {
 
 .btn:hover {
   background-color: #66ec2d;
+  box-shadow: #66ec2d 2px 2px 2px;
 }
 
 #quiz-screen h3 {
