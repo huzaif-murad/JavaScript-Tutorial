@@ -56,15 +56,45 @@ let scoreValue = 0;
 let hasAnswered = 0;
 let quizStarted = false;
 
-function handleAnswer(answer) {
+
+function handleAnswer(selectedIndex) {
+    const buttons = answersContainer.children;
+
+    if (hasAnswered == true) {
+        return;
+    }
+
+    //change the answer state
+    hasAnswered = true;
+
+    //update score
+    if (selectedIndex === questionsData[currenQIndex].correctIndex) {
+        scoreValue += 5;
+        score.innerHTML = scoreValue;
+
+    }
+
+    //Changing color of the options based on selected answer
+    for (let i = 0; i < buttons.length; i++) {
+        const button = buttons[i];
+        if (i === questionsData[currenQIndex].correctIndex) {
+            button.classList.add("correct")
+        } else if (i === selectedIndex) {
+            button.classList.add("wrong")
+        }
+
+        //Disable buttons
+        button.disabled = true;
+    }
 
 }
 
+
 function showQuestion(currenQIndex) {
     answersContainer.innerHTML = "";
-
+    hasAnswered = false;
     let currentQuestion = questionsData[currenQIndex];
-    console.log(currentQuestion);
+
     questionText.innerHTML = currentQuestion.question;
     currentQuestionNum.innerHTML = currenQIndex + 1;
     totalQuestions.innerHTML = questionsData.length;
@@ -76,7 +106,8 @@ function showQuestion(currenQIndex) {
         button.classList.add("answer-btn")
         button.textContent = option;
         button.addEventListener("click", function () {
-            handleAnswer(index)
+            //call to handle answers
+            handleAnswer(index);
         })
         answersContainer.appendChild(button);
     });

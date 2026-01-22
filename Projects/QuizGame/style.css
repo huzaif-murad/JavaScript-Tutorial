@@ -83,6 +83,9 @@ body {
   box-shadow: #66ec2d 2px 2px 2px;
 }
 
+#quiz-screen {
+  height: 70vh;
+}
 #quiz-screen h3 {
   color: #fff4ec;
   font-size: 1.5rem;
@@ -114,6 +117,7 @@ body {
 .answer-btn {
   background-color: #ffd6e8;
   color: #102e4a;
+  border: 2px solid transparent;
   width: 100%;
   text-align: left;
   font-size: 1.3rem;
@@ -121,11 +125,20 @@ body {
   border-radius: 0.3rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  border: none;
 }
 
-.answer-btn:hover {
-  background-color: #fec0db;
+.answer-btn:hover:not(:disabled) {
+  background-color: #fec0db; 
+}
+
+.correct {
+  border: 2px solid #70fe33;
+  background-color: #c7fbb0;
+}
+
+.wrong {
+  border: 2px solid #f95050;
+  background-color: #fcb7b7;
 }
 
 #progress-bar {
